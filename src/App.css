@@ -1,0 +1,27 @@
+.bg404 {
+  background-image: url(../src/images/404-1280x720.png) ;
+  background-position: top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  height: 800px;
+  width: 100%;
+
+}
+h2 {
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 169, 236, 0.925);
+  text-align: center;
+}
+li {
+  list-style-type: none;
+  background-color: bisque;
+  margin-top: 10px;
+  width: 100vh;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.active {
+  background-color: rgb(198, 206, 126);
+}
