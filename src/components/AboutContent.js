@@ -4,7 +4,7 @@ import React from 'react';
 
 
 function AboutContent(props) {
-  const {setIsVisable , isCounter , setIsCounter, setStateCounter, stateCounter } = props;
+  const {setIsVisable , isCounter , setIsCounter } = props;
   return (
     <div className="App">
       

@@ -12,16 +12,55 @@ h2 {
   background: rgba(0, 169, 236, 0.925);
   text-align: center;
 }
-li {
-  list-style-type: none;
-  background-color: bisque;
-  margin-top: 10px;
-  width: 100vh;
-}
+
 a {
   text-decoration: none;
   color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: rgb(231, 218, 31);
+  width: 50vh;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+ 
+  
+  
 }
 .active {
-  background-color: rgb(198, 206, 126);
+  background-color: rgb(147, 126, 206);
+}
+.main-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: left;
+}
+
+
+.main-menu {
+  width: calc(100vw);
+  height: 50px;
+  background-color: chocolate;
+  
+}
+.StarWarsApi {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  
+  
+}
+.api_wrapper {
+  padding-left: 25px;
+  padding-right: 25px;
+  border-left: 1px solid #000;
+  border-right: 1px solid black;
+  background: rgba(0, 195, 255, 0.171);
+}
+.ApiNotFound h1 {
+  padding: 20px;
+  background: rgba(255, 0, 0, 0.171);
 }
