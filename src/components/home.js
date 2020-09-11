@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="App">
       
-       <h2>Home</h2>
+       <div className="home_page">Home</div>
     </div>
   );
 }

@@ -6,28 +6,52 @@
   width: 100%;
 
 }
+.Main-Wrapper {
+  display: flex;
+}
 h2 {
-  width: 100%;
+  margin-top: 0;
   height: 50px;
   background: rgba(0, 169, 236, 0.925);
   text-align: center;
 }
-
+.home_page , .users_page {
+  width: calc(100vw - 170px);
+  height: 50px;
+  background: rgba(0, 169, 236, 0.925);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  
+}
+.about-wrapper {
+  width: calc(100vw - 170px);
+  
+}
 a {
+  
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   margin-top: 10px;
   background-color: rgb(231, 218, 31);
-  width: 50vh;
+  
 }
 .menu {
+  
   display: flex;
   flex-direction: column;
+  background-color: rgba(251, 255, 2, 0.226);
+  height: 100vh;
+  padding-left: 10px;
+  
  
   
   
+}
+nav {
+  width: 160px;
 }
 .active {
   background-color: rgb(147, 126, 206);
@@ -35,21 +59,22 @@ a {
 .main-page {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  width: 100vw;
   align-items: left;
 }
 
 
 .main-menu {
-  width: calc(100vw);
-  height: 50px;
+  
+  height: 55px;
   background-color: chocolate;
+
   
 }
 .StarWarsApi {
   display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  justify-content: space-between;
+  margin-bottom: 50px;
   
   
 }
@@ -59,6 +84,8 @@ a {
   border-left: 1px solid #000;
   border-right: 1px solid black;
   background: rgba(0, 195, 255, 0.171);
+  height: 110%;
+  
 }
 .ApiNotFound h1 {
   padding: 20px;

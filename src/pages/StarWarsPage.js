@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import People from '../components/StarWarsApi/People'
 import Planets from '../components/StarWarsApi/Planets'
+import PlanetsList from '../components/StarWarsApi/PlanetsList'
 import Starships from '../components/StarWarsApi/Starships'
 import MainMenu from '../components/StarWarsApi/MainMenu'
 
@@ -23,6 +24,9 @@ function StarWarsPage(props) {
         shipNumber={shipNumber}
         /> 
         </div>
+        <PlanetsList
+        shipNumber={shipNumber}
+        /> 
     </div>
   );
 }

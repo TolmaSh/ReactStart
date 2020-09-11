@@ -5,7 +5,7 @@ function Users() {
   return (
     <div className="App">
       
-       <h2>Users</h2>
+      <div className="users_page">Users</div>
     </div>
   );
 }
