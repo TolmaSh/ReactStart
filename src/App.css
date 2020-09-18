@@ -83,11 +83,39 @@ nav {
   padding-right: 25px;
   border-left: 1px solid #000;
   border-right: 1px solid black;
-  background: rgba(0, 195, 255, 0.171);
+  background: rgba(0, 195, 255, 0.062);
   height: 110%;
   
 }
 .ApiNotFound h1 {
   padding: 20px;
   background: rgba(255, 0, 0, 0.171);
+}
+.Planet-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.Planet-wrapper li {
+  padding: 30px;
+  list-style: none;
+}
+ul.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination li{
+  display: inline-block;
+  padding: 1px;
+}
+.pagination a{
+  padding: 10px;
+  border-radius: 10%;
+  background-color: rgba(31, 151, 231, 0.664);
+  font-size: 15px;
+  color: white;
+}
+.pagination .active a{
+  background-color: rgb(44, 44, 44);
 }
