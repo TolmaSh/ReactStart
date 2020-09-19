@@ -1,21 +1,42 @@
 import React, {useState, useEffect,} from 'react';
 
-const api = 'https://swapi.dev/api/'
+// const api = 'https://swapi.dev/api/'
 
 function People(props) {
-    const [data, setData] = useState(null)
-    let {shipNumber} = props
+    const [data, setData] = useState()
+    const [searchData, setSearchData] = useState([])
+    let {shipNumber , searchString} = props
 
 
     useEffect(() => {
-        
-            fetch(`${api}people/${shipNumber}/`)
+        if(searchString === "") {
+            fetch(`https://swapi.dev/api/people/${shipNumber}/`)
             .then(res => res.json())
             .then(res => setData(res))
+            .catch(error => console.error('Ошибка:', error))}
+            else {
+            fetch(`https://swapi.dev/api/people/?search=${searchString}`)
+            .then(res => res.json())
+            .then(res => setSearchData(res))
             .catch(error => console.error('Ошибка:', error))
+            }
         
-    }, [shipNumber])
+    }, [shipNumber, searchString, setSearchData , searchData])
+    
+    let peoples = searchData.map(
+      el => <li key={el.name} >Name: {el.name}
+      <br/></li> 
+      ); 
+      // В консоле элементы находит но выдает ошибку на странице
 
+    if (searchString !== '') {
+      return (
+        <div>
+           {peoples}
+            
+        </div>
+    )
+    }  else {
     if (data?.name)
   return (
     
@@ -24,10 +45,7 @@ function People(props) {
      Name:  {data?.name} <br /><br />
      Gender:  {data?.gender} <br /><br />
      Birth year:  {data?.birth_year} <br /><br />
-     Height: {data?.height}
-     
-     
-     
+     Height: {data?.height} 
     </div>
     );
     else {
@@ -35,9 +53,8 @@ function People(props) {
       <div className="ApiNotFound">
         <h1>People Not Found</h1>
       </div>
-  );
-    }
-  
+          );}
+        }
   }
 
 export default People;

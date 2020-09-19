@@ -4,7 +4,7 @@ const api = 'https://swapi.dev/api/'
 
 function Planets(props) {
     const [data, setData] = useState(null)
-    let {shipNumber} = props
+    let {shipNumber , searchString} = props
 
 
     useEffect(() => {
@@ -14,7 +14,7 @@ function Planets(props) {
             .then(res => setData(res))
             .catch(error => console.error('Ошибка:', error))
         
-    }, [shipNumber])
+    }, [shipNumber, searchString])
 
     if (data?.name)
   return (

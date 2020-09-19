@@ -8,7 +8,7 @@ import ReactPaginate from 'react-paginate';
 
 function PlanetsList(props) {
     const [data, setData] = useState([])
-    const api = `https://swapi.dev/api/planets/`
+    // const api = `https://swapi.dev/api/planets/`
     const [page, setPage] = useState(1)
     let pagBtn = (btnNum) => setPage(btnNum.selected + 1);
     
@@ -18,7 +18,7 @@ function PlanetsList(props) {
 
     useEffect(() => {
         
-            fetch(`${api}?page=${page}`)
+            fetch(`https://swapi.dev/api/planets/?page=${page}`)
             .then(res => res.json())
             .then(res => setData(res.results))
             .catch(error => console.error('Ошибка:', error))
