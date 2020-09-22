@@ -17,7 +17,7 @@ function People(props) {
             else {
             fetch(`https://swapi.dev/api/people/?search=${searchString}`)
             .then(res => res.json())
-            .then(res => setSearchData(res))
+            .then(res => setSearchData(res.results))
             .catch(error => console.error('Ошибка:', error))
             }
         

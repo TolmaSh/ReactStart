@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function MainMenu(props) {
-    let {setShipNumber , setSearchString} = props
+    let {setShipNumber , setSearchString, searchString} = props
     const [input, setInput] = useState(0)
   return (
     <div className="main-menu">
@@ -13,8 +13,8 @@ function MainMenu(props) {
       <button onClick={() => setShipNumber(input)}> Click Me</button></div>
       <input type="text" 
              placeholder="search"
-             onChange={(e) => setSearchString(e.target.value)
-            } />
+             onChange={(e) => setSearchString(e.target.value)}
+             value={searchString} />
       
     </div>
   );
