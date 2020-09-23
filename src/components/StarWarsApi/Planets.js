@@ -1,21 +1,41 @@
 import React, {useState, useEffect,} from 'react';
 
-const api = 'https://swapi.dev/api/'
+// const api = 'https://swapi.dev/api/'
 
 function Planets(props) {
-    const [data, setData] = useState(null)
-    let {shipNumber , searchString} = props
+  const [data, setData] = useState()
+  const [searchData, setSearchData] = useState([])
+  let {shipNumber , searchString} = props
 
 
     useEffect(() => {
-        
-            fetch(`${api}planets/${shipNumber}/`)
-            .then(res => res.json())
-            .then(res => setData(res))
-            .catch(error => console.error('Ошибка:', error))
-        
-    }, [shipNumber, searchString])
+      if(searchString === "") {
+          fetch(`https://swapi.dev/api/planets/${shipNumber}/`)
+          .then(res => res.json())
+          .then(res => setData(res))
+          .catch(error => console.error('Ошибка:', error))}
+          else {
+          fetch(`https://swapi.dev/api/planets/?search=${searchString}`)
+          .then(res => res.json())
+          .then(res => setSearchData(res.results))
+          .catch(error => console.error('Ошибка:', error))
+          }
+      
+  }, [shipNumber, searchString, setSearchData])
+  
+  let planets = searchData.map(
+    el => <li key={el.name} >Planet Name: {el.name}
+    <br/></li> 
+    ); 
 
+    if (searchString !== '') {
+      return (
+        <div className="api_wrapper">
+           {planets}
+            
+        </div>
+    )
+    }  else {
     if (data?.name)
   return (
     
@@ -34,7 +54,7 @@ function Planets(props) {
         <div className="ApiNotFound">
         <h1>Planet Not Found</h1>
       </div>
-  );
+  );}
     }
   
   }

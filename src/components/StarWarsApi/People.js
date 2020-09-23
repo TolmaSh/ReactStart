@@ -21,17 +21,17 @@ function People(props) {
             .catch(error => console.error('Ошибка:', error))
             }
         
-    }, [shipNumber, searchString, setSearchData , searchData])
+    }, [shipNumber, searchString, setSearchData])
     
     let peoples = searchData.map(
       el => <li key={el.name} >Name: {el.name}
       <br/></li> 
       ); 
-      // В консоле элементы находит но выдает ошибку на странице
+      
 
     if (searchString !== '') {
       return (
-        <div>
+        <div className="api_wrapper">
            {peoples}
             
         </div>
