@@ -7,7 +7,9 @@ import MainMenu from '../components/StarWarsApi/MainMenu'
 
 function StarWarsPage(props) {
     const [shipNumber, setShipNumber] = useState(9)
-    const [searchString, setSearchString] = useState("")
+    const [searchString, setSearchString] = useState(localStorage.getItem('swapiSearch') || '');
+  
+   
     
   return (
     <div className="main-page">
